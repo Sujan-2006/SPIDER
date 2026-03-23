@@ -1,13 +1,106 @@
 /* GrapesJS UI Overrides for "Sophisticated Minimalist" Aesthetic - THE LOOM EXPERIMENTAL */
 
-.gjs-cv-canvas {
-  background-color: transparent !important;
-}
-
-/* Base UI wrapper */
-.gjs-editor {
+/* Force all GrapesJS editor wrappers to be transparent to show our React background */
+.gjs-editor-cont,
+.gjs-editor,
+.gjs-editor > *,
+.gjs-cv-canvas,
+.gjs-frame-wrapper {
+  background: transparent !important;
+  color: #1A1A1A !important;
   font-family: 'Inter', system-ui, sans-serif !important;
 }
+
+/* Ensure the canvas doesn't have its own background */
+.gjs-cv-canvas {
+  background-color: transparent !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* The actual iframe/frame gets white and centered */
+.gjs-frame-wrapper {
+  background: #ffffff !important;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+}
+
+/* Asset Manager Styling (The Library) */
+.gjs-am-assets-cont {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 12px !important;
+  padding: 12px !important;
+  background: transparent !important;
+}
+
+.gjs-am-asset {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1/1 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: 1px solid #E5E7EB !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.gjs-am-asset:hover {
+  border-color: #9D50BB !important;
+  box-shadow: 0 4px 6px -1px rgba(157, 80, 187, 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+.gjs-am-add-asset {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 16px !important;
+  gap: 12px !important;
+  border-bottom: 1px solid #F3F4F6 !important;
+}
+
+.gjs-am-add-asset input {
+  padding: 8px 12px !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  outline: none !important;
+}
+
+.gjs-am-add-asset button {
+  background: #9D50BB !important;
+  color: white !important;
+  padding: 8px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+}
+
+/* Layer Manager (The Hierarchy) */
+.gjs-layer {
+  padding: 6px 12px !important;
+  border-bottom: 1px solid #F9FAFB !important;
+  color: #4B5563 !important;
+  font-size: 13px !important;
+}
+
+.gjs-layer:hover {
+  background: #F3F4F6 !important;
+}
+
+.gjs-layer-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
 
 /* BLOCKS MANAGER */
 .gjs-block {
