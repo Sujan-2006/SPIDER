@@ -32,7 +32,70 @@ export const loadBlocks = (editor) => {
     label: '4 Columns', category: 'Layout', media: svgCols, content: `<div style="display: flex; gap: 20px;"><div style="flex: 1; padding: 20px; border: 1px dashed rgba(0,0,0,0.1);">Col</div><div style="flex: 1; padding: 20px; border: 1px dashed rgba(0,0,0,0.1);">Col</div><div style="flex: 1; padding: 20px; border: 1px dashed rgba(0,0,0,0.1);">Col</div><div style="flex: 1; padding: 20px; border: 1px dashed rgba(0,0,0,0.1);">Col</div></div>`
   });
 
-  /* === CATEGORY: BASIC === */
+  // ── RESPONSIVE GRID (3 → 2 → 1 column auto breakpoints) ─────────────────────
+  const svgGrid = `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11-11h7v7h-7V3zm0 11h7v7h-7v-7z"/></svg>`;
+
+  bm.add('grid-3col-responsive', {
+    label: 'Grid 3→2→1',
+    category: 'Responsive',
+    media: svgGrid,
+    content: {
+      type: 'default',
+      tagName: 'div',
+      classes: ['grid-responsive'],
+      attributes: { 'data-gjs-type': 'default' },
+      style: { padding: '16px' },
+      components: [
+        {
+          tagName: 'div', classes: ['grid-col'],
+          style: { padding: '24px', background: '#f3f4f6', borderRadius: '8px', 'min-height': '120px' },
+          components: [{ type: 'text', content: 'Column 1 — Desktop: 1/3<br/>Tablet: 1/2<br/>Mobile: full' }]
+        },
+        {
+          tagName: 'div', classes: ['grid-col'],
+          style: { padding: '24px', background: '#ede9fe', borderRadius: '8px', 'min-height': '120px' },
+          components: [{ type: 'text', content: 'Column 2 — Desktop: 1/3<br/>Tablet: 1/2<br/>Mobile: full' }]
+        },
+        {
+          tagName: 'div', classes: ['grid-col'],
+          style: { padding: '24px', background: '#fce7f3', borderRadius: '8px', 'min-height': '120px' },
+          components: [{ type: 'text', content: 'Column 3 — Desktop: 1/3<br/>Tablet: hidden (wraps)<br/>Mobile: full' }]
+        },
+      ]
+    }
+  });
+
+  bm.add('grid-2col-responsive', {
+    label: 'Grid 2→1',
+    category: 'Responsive',
+    media: svgCols,
+    content: {
+      type: 'default',
+      tagName: 'div',
+      attributes: { 'data-gjs-type': 'default' },
+      style: {
+        display: 'grid',
+        'grid-template-columns': 'repeat(2, 1fr)',
+        gap: '24px',
+        width: '100%',
+        'box-sizing': 'border-box',
+      },
+      components: [
+        {
+          tagName: 'div',
+          style: { padding: '24px', background: '#f0fdf4', borderRadius: '8px', 'min-height': '120px' },
+          components: [{ type: 'text', content: 'Left Column' }]
+        },
+        {
+          tagName: 'div',
+          style: { padding: '24px', background: '#fef9c3', borderRadius: '8px', 'min-height': '120px' },
+          components: [{ type: 'text', content: 'Right Column' }]
+        },
+      ]
+    }
+  });
+
+
   bm.add('header-text', {
     label: 'Header',
     category: 'Basic',
