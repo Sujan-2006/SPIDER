@@ -16,9 +16,11 @@ export default function App() {
         <div className="flex-1 w-full h-full overflow-hidden flex flex-col relative focus:outline-none">
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/signup" element={<SignUpPage defaultLogin={false} />} />
+            <Route path="/login" element={<SignUpPage defaultLogin={true} />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/builder" element={<BuilderPage />} />
+            <Route path="/builder/:projectId" element={<BuilderPage />} />
             <Route path="/preview" element={<PreviewPage />} />
           </Routes>
         </div>

@@ -222,13 +222,13 @@ export default function LandingPage() {
         </div>
         <div className="flex items-center gap-3">
           <button
-            onClick={() => navigate('/signup')}
+            onClick={() => navigate('/login')}
             className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-4 py-2"
           >
             Log in
           </button>
           <button
-            onClick={() => navigate('/dashboard')}
+            onClick={() => navigate('/signup')}
             className="text-sm font-semibold px-5 py-2.5 rounded-full bg-gray-900 text-white hover:bg-indigo-600 transition-all shadow-md"
           >
             Start for free
