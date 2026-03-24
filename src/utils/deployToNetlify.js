@@ -24,21 +24,21 @@ export const deployToNetlify = async (html, css, token, existingSiteId = null) =
   zip.file('index.html', htmlContent);
   zip.file('style.css', css || '');
 
-  const contentArrayBuffer = await zip.generateAsync({ type: 'arraybuffer' });
+  const base64zip = await zip.generateAsync({ type: 'base64' });
 
-  // Use the absolute Netlify URL to completely bypass deployment proxy conflicts!
-  const baseUrl = 'https://api.netlify.com/api/v1';
-  const url = existingSiteId 
-    ? `${baseUrl}/sites/${existingSiteId}/deploys`
-    : `${baseUrl}/sites`;
+  // Securely call our custom Netlify Serverless Backend Function
+  const url = '/.netlify/functions/deploy';
     
   const response = await fetch(url, {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/zip',
-      'Authorization': `Bearer ${token}`
+      'Content-Type': 'application/json'
     },
-    body: contentArrayBuffer
+    body: JSON.stringify({
+      token: token,
+      siteId: existingSiteId,
+      zipBase64: base64zip
+    })
   });
 
   if (!response.ok) {
