@@ -40,11 +40,23 @@ const RightSidebarInner = ({ editor }) => {
     editor.on('component:selected', handleComponentSelected);
     editor.on('component:deselected', handleComponentDeselected);
 
+    // Ensure GrapesJS UI is appended to our React containers whenever this mounts
+    const stylesContainer = document.getElementById('styles-container');
+    if (stylesContainer && stylesContainer.children.length === 0) {
+      stylesContainer.appendChild(editor.StyleManager.render());
+    }
+
+    const traitsContainer = document.getElementById('traits-container');
+    if (traitsContainer && traitsContainer.children.length === 0) {
+      traitsContainer.appendChild(editor.TraitManager.render());
+    }
+
     return () => {
       editor.off('component:selected', handleComponentSelected);
       editor.off('component:deselected', handleComponentDeselected);
     };
   }, [editor]);
+
 
   return (
     <div className="w-[300px] h-full bg-white border-l border-gray-200 flex flex-col z-10 shrink-0">

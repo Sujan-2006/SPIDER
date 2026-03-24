@@ -140,22 +140,10 @@ const Builder = ({ projectId, templateId }) => {
       }
     };
     
+    // Trait and Style managers are now fully handled by RightSidebar.jsx to support
+    // React's mounting/unmounting lifecycle during Preview toggles.
     e.on('load', loadTpl);
     setTimeout(loadTpl, 500);
-
-    e.on('load', () => {
-      const sm = e.StyleManager;
-      const stylesContainer = document.getElementById('styles-container');
-      if (stylesContainer) {
-        stylesContainer.appendChild(sm.render());
-      }
-      
-      const tm = e.TraitManager;
-      const traitsContainer = document.getElementById('traits-container');
-      if (traitsContainer) {
-        traitsContainer.appendChild(tm.render());
-      }
-    });
 
     return () => e.destroy();
   }, [templateId]);

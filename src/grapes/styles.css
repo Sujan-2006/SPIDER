@@ -10,7 +10,6 @@
 }
 
 /* Hide editor chrome in Preview Mode */
-.is-preview .gjs-cv-canvas__frames,
 .is-preview .gjs-cv-canvas__overlays,
 .is-preview .gjs-toolbar,
 .is-preview .gjs-badge,
