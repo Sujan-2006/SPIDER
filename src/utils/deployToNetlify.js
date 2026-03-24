@@ -26,8 +26,8 @@ export const deployToNetlify = async (html, css, token, existingSiteId = null) =
 
   const contentArrayBuffer = await zip.generateAsync({ type: 'arraybuffer' });
 
-  // If we have an existing site, update it. Otherwise create a new one.
-  const baseUrl = '/api/netlify';
+  // Use the absolute Netlify URL to completely bypass deployment proxy conflicts!
+  const baseUrl = 'https://api.netlify.com/api/v1';
   const url = existingSiteId 
     ? `${baseUrl}/sites/${existingSiteId}/deploys`
     : `${baseUrl}/sites`;
