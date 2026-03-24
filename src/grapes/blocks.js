@@ -5,15 +5,87 @@ export const loadBlocks = (editor) => {
   const svgLayout = `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14H19z"/></svg>`;
   const svgCols = `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 5v14h18V5H3zm8 12H5V7h6v10zm8 0h-6V7h6v10z"/></svg>`;
   const svgText = `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M2.5 4v3h5v12h3V7h5V4h-13z"/></svg>`;
+  const svgTypography = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>`;
+  const svgForms = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>`;
+  const svgAdvanced = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
 
   /* === CATEGORY: LAYOUT === */
-  bm.add('section', {
-    label: 'Section',
+  bm.add('hero-section', {
+    label: 'Hero Section',
     category: 'Layout',
     media: svgLayout,
     content: {
       tagName: 'section',
-      style: { padding: '50px 0', width: '100%', 'min-height': '100px' }
+      style: { 
+        padding: '120px 20px', 
+        display: 'flex', 
+        'flex-direction': 'column', 
+        'align-items': 'center', 
+        'text-align': 'center',
+        'background-image': 'linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.05)), url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80")',
+        'background-size': 'cover',
+        'background-position': 'center',
+        color: '#ffffff',
+        'min-height': '600px',
+        'justify-content': 'center'
+      },
+      components: [
+        { tagName: 'h1', content: 'Design Your Legacy', style: { 'font-size': '4rem', 'font-family': '"Playfair Display", serif', 'margin-bottom': '20px', 'font-weight': '700' } },
+        { tagName: 'p', content: 'Crafting sophisticated digital experiences with surgical precision.', style: { 'font-size': '1.2rem', 'max-width': '600px', 'margin-bottom': '40px', 'opacity': '0.9' } },
+        { tagName: 'a', content: 'Begin Journey', style: { padding: '15px 40px', 'background-color': '#ffffff', color: '#111', 'text-decoration': 'none', 'border-radius': '4px', 'font-weight': '600', 'font-size': '14px', 'letter-spacing': '1px', 'text-transform': 'uppercase' } }
+      ]
+    }
+  });
+
+  bm.add('feature-grid', {
+    label: 'Feature Grid',
+    category: 'Layout',
+    media: svgCols,
+    content: {
+      tagName: 'section',
+      style: { padding: '80px 20px', 'background-color': '#ffffff' },
+      components: [
+        {
+          tagName: 'div',
+          style: { display: 'grid', 'grid-template-columns': 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', 'max-width': '1200px', margin: '0 auto' },
+          components: [
+            {
+              tagName: 'div',
+              style: { padding: '30px', 'text-align': 'center', border: '1px solid #f0f0f0', 'border-radius': '12px' },
+              components: [
+                { tagName: 'h3', content: 'Ethereal Performance', style: { 'margin-bottom': '15px', 'font-family': '"Playfair Display", serif' } },
+                { tagName: 'p', content: 'Lightning fast load times powered by our optimized core engine.', style: { color: '#666', 'font-size': '14px' } }
+              ]
+            },
+            {
+                tagName: 'div',
+                style: { padding: '30px', 'text-align': 'center', border: '1px solid #f0f0f0', 'border-radius': '12px' },
+                components: [
+                  { tagName: 'h3', content: 'Editorial Aesthetic', style: { 'margin-bottom': '15px', 'font-family': '"Playfair Display", serif' } },
+                  { tagName: 'p', content: 'Typography-first design that prioritizes content and legibility.', style: { color: '#666', 'font-size': '14px' } }
+                ]
+            },
+            {
+                tagName: 'div',
+                style: { padding: '30px', 'text-align': 'center', border: '1px solid #f0f0f0', 'border-radius': '12px' },
+                components: [
+                  { tagName: 'h3', content: 'Global Scale', style: { 'margin-bottom': '15px', 'font-family': '"Playfair Display", serif' } },
+                  { tagName: 'p', content: 'Deploy to the worlds edge with one-click Netlify integration.', style: { color: '#666', 'font-size': '14px' } }
+                ]
+            }
+          ]
+        }
+      ]
+    }
+  });
+
+  bm.add('section', {
+    label: 'Empty Section',
+    category: 'Layout',
+    media: svgLayout,
+    content: {
+      tagName: 'section',
+      style: { padding: '50px 0', width: '100%', 'min-height': '150px' }
     }
   });
   bm.add('container', {
@@ -176,9 +248,67 @@ export const loadBlocks = (editor) => {
   });
 
 
+  /* === CATEGORY: TYPOGRAPHY === */
+  bm.add('display-heading', {
+    label: 'Display Heading',
+    category: 'Typography',
+    media: svgTypography,
+    content: {
+      tagName: 'h1',
+      content: 'Sophisticated Minimalism.',
+      style: { 
+        'font-family': '"Playfair Display", serif', 
+        'font-size': '5rem', 
+        'font-weight': '700', 
+        'line-height': '1.1', 
+        'margin-bottom': '0.5em',
+        color: '#111'
+      }
+    }
+  });
+
+  bm.add('lead-paragraph', {
+    label: 'Lead Paragraph',
+    category: 'Typography',
+    media: svgText,
+    content: {
+      tagName: 'p',
+      content: 'This is a lead paragraph designed to capture attention with large, elegant typography and balanced line height.',
+      style: { 
+        'font-size': '1.5rem', 
+        'line-height': '1.6', 
+        color: '#444', 
+        'max-width': '800px',
+        'margin-bottom': '1.5em'
+      }
+    }
+  });
+
+  bm.add('quote-editorial', {
+    label: 'Editorial Quote',
+    category: 'Typography',
+    media: svgText,
+    content: {
+      tagName: 'blockquote',
+      style: { 
+        'border-left': '4px solid #9D50BB', 
+        'padding-left': '30px', 
+        'margin': '40px 0',
+        'font-style': 'italic',
+        'font-size': '1.8rem',
+        'font-family': '"Playfair Display", serif',
+        color: '#333'
+      },
+      components: [
+        { tagName: 'span', content: '"Design is not just what it looks like and feels like. Design is how it works."' },
+        { tagName: 'footer', content: '— Steve Jobs', style: { 'font-size': '1rem', 'font-style': 'normal', 'margin-top': '15px', color: '#888' } }
+      ]
+    }
+  });
+
   bm.add('header-text', {
-    label: 'Header',
-    category: 'Basic',
+    label: 'H1 Heading',
+    category: 'Typography',
     media: svgText,
     content: {
       type: 'text',
@@ -188,25 +318,14 @@ export const loadBlocks = (editor) => {
     }
   });
   bm.add('paragraph-text', {
-    label: 'Paragraph',
-    category: 'Basic',
+    label: 'Standard Paragraph',
+    category: 'Typography',
     media: svgText,
     content: {
       type: 'text',
       tagName: 'p',
       content: 'Your compelling paragraph goes right here.',
       style: { 'font-family': "'Inter', sans-serif", 'font-size': '1.1rem', color: '#555', 'line-height': '1.6' }
-    }
-  });
-  bm.add('quote', {
-    label: 'Quote',
-    category: 'Basic',
-    media: svgText,
-    content: {
-      type: 'text',
-      tagName: 'blockquote',
-      content: '"Simplicity is the ultimate sophistication."',
-      style: { 'font-family': "'Playfair Display', serif", 'font-style': 'italic', 'font-size': '1.5rem', color: '#9D50BB', 'border-left': '4px solid #9D50BB', 'padding-left': '20px', margin: '20px 0' }
     }
   });
 
@@ -251,17 +370,119 @@ export const loadBlocks = (editor) => {
   });
 
   /* === CATEGORY: FORMS === */
-  bm.add('form', {
-    label: 'Form', category: 'Forms', media: svgLayout,
+  /* === CATEGORY: FORMS === */
+  bm.add('contact-form', {
+    label: 'Contact Form',
+    category: 'Forms',
+    media: svgForms,
     content: {
-      type: 'form',
-      style: { padding: '20px', 'min-height': '50px', background: '#fafafa', 'border-radius': '8px' },
+      tagName: 'form',
+      style: { padding: '40px', 'background-color': '#fbfbfb', 'border-radius': '12px', 'max-width': '500px' },
       components: [
-        { type: 'label', content: 'Name', style: { display: 'block', 'margin-bottom': '5px' } },
-        { type: 'input', attributes: { type: 'text', placeholder: 'Enter name' }, style: { padding: '10px', 'margin-bottom': '15px', width: '100%', border: '1px solid #ccc', 'border-radius': '4px' } },
-        { type: 'label', content: 'Email', style: { display: 'block', 'margin-bottom': '5px' } },
-        { type: 'input', attributes: { type: 'email', placeholder: 'Enter email' }, style: { padding: '10px', 'margin-bottom': '15px', width: '100%', border: '1px solid #ccc', 'border-radius': '4px' } },
-        { type: 'button', content: 'Submit', style: { padding: '10px 20px', background: '#9D50BB', color: '#fff', border: 'none', 'border-radius': '4px', cursor: 'pointer' } }
+        { 
+          tagName: 'div', style: { 'margin-bottom': '20px' },
+          components: [
+            { tagName: 'label', content: 'Full Name', style: { display: 'block', 'font-size': '12px', 'font-weight': '600', 'margin-bottom': '8px', 'text-transform': 'uppercase', 'letter-spacing': '1px' } },
+            { tagName: 'input', attributes: { type: 'text', placeholder: 'Jane Doe', name: 'name' }, style: { width: '100%', padding: '12px', border: '1px solid #e0e0e0', 'border-radius': '6px' } }
+          ]
+        },
+        { 
+            tagName: 'div', style: { 'margin-bottom': '20px' },
+            components: [
+              { tagName: 'label', content: 'Email Address', style: { display: 'block', 'font-size': '12px', 'font-weight': '600', 'margin-bottom': '8px', 'text-transform': 'uppercase', 'letter-spacing': '1px' } },
+              { tagName: 'input', attributes: { type: 'email', placeholder: 'jane@example.com', name: 'email' }, style: { width: '100%', padding: '12px', border: '1px solid #e0e0e0', 'border-radius': '6px' } }
+            ]
+        },
+        { tagName: 'button', content: 'Send Message', attributes: { type: 'submit' }, style: { width: '100%', padding: '15px', 'background-color': '#9D50BB', color: '#fff', border: 'none', 'border-radius': '6px', 'font-weight': '600', cursor: 'pointer' } }
+      ]
+    }
+  });
+
+  bm.add('newsletter-signup', {
+    label: 'Newsletter',
+    category: 'Forms',
+    media: svgForms,
+    content: {
+      tagName: 'div',
+      style: { padding: '40px', 'background-color': '#111', color: '#fff', 'border-radius': '12px', 'text-align': 'center' },
+      components: [
+        { tagName: 'h3', content: 'Join the Vanguard', style: { 'font-family': '"Playfair Display", serif', 'font-size': '1.5rem', 'margin-bottom': '10px' } },
+        { tagName: 'p', content: 'Receive curated design insights twice a month.', style: { 'font-size': '0.9rem', 'opacity': '0.7', 'margin-bottom': '20px' } },
+        {
+          tagName: 'form',
+          style: { display: 'flex', gap: '10px', 'max-width': '400px', margin: '0 auto' },
+          components: [
+            { tagName: 'input', attributes: { type: 'email', placeholder: 'Email address' }, style: { flex: '1', padding: '12px', border: '1px solid #333', 'background-color': '#222', color: '#fff', 'border-radius': '6px' } },
+            { tagName: 'button', content: 'Join', style: { padding: '12px 25px', 'background-color': '#9D50BB', color: '#fff', border: 'none', 'border-radius': '6px', 'font-weight': '600', cursor: 'pointer' } }
+          ]
+        }
+      ]
+    }
+  });
+
+  /* === CATEGORY: INTERACTIVE === */
+  const svgTimer = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`;
+  
+  bm.add('countdown-premium', {
+    label: 'Countdown',
+    category: 'Interactive',
+    media: svgTimer,
+    content: {
+      type: 'countdown',
+      style: { padding: '40px', 'text-align': 'center', 'background-color': '#f8f9fa', 'border-radius': '12px' },
+      components: [
+        { tagName: 'h4', content: 'Launch Countdown', style: { 'margin-bottom': '15px', 'text-transform': 'uppercase', 'letter-spacing': '2px', 'font-size': '12px', color: '#888' } }
+      ]
+    }
+  });
+
+  bm.add('accordion-editorial', {
+    label: 'Accordion',
+    category: 'Interactive',
+    media: svgLayout,
+    content: {
+      tagName: 'div',
+      style: { 'max-width': '600px', margin: '20px 0' },
+      components: [
+        {
+          tagName: 'details',
+          style: { border: '1px solid #eee', 'border-radius': '8px', 'margin-bottom': '10px', overflow: 'hidden' },
+          components: [
+            { tagName: 'summary', content: 'How it Works', style: { padding: '15px 20px', 'font-weight': '600', cursor: 'pointer', 'background-color': '#fff', outline: 'none' } },
+            { tagName: 'div', content: 'Spider uses a proprietary core engine to transform your visual designs into production-ready React code.', style: { padding: '20px', 'line-height': '1.6', color: '#666', 'background-color': '#fafafa' } }
+          ]
+        },
+        {
+            tagName: 'details',
+            style: { border: '1px solid #eee', 'border-radius': '8px', 'margin-bottom': '10px', overflow: 'hidden' },
+            components: [
+              { tagName: 'summary', content: 'Pricing & Licensing', style: { padding: '15px 20px', 'font-weight': '600', cursor: 'pointer', 'background-color': '#fff', outline: 'none' } },
+              { tagName: 'div', content: 'Our licensing model is designed for solo creators and large agency teams alike.', style: { padding: '20px', 'line-height': '1.6', color: '#666', 'background-color': '#fafafa' } }
+            ]
+        }
+      ]
+    }
+  });
+
+  /* === CATEGORY: ADVANCED === */
+  bm.add('testimonial-card', {
+    label: 'Testimonial',
+    category: 'Advanced Interactivity',
+    media: svgAdvanced,
+    content: {
+      tagName: 'div',
+      style: { padding: '40px', 'background-color': '#fff', 'border-radius': '20px', 'box-shadow': '0 10px 40px rgba(0,0,0,0.05)', 'max-width': '400px' },
+      components: [
+        { tagName: 'div', content: '★★★★★', style: { color: '#FFD700', 'margin-bottom': '15px', 'font-size': '18px' } },
+        { tagName: 'p', content: 'The Spider editor has completely transformed our workflow. The editorial control is unmatched.', style: { 'font-style': 'italic', 'margin-bottom': '20px', color: '#444' } },
+        {
+          tagName: 'div',
+          style: { display: 'flex', 'align-items': 'center', gap: '15px' },
+          components: [
+            { tagName: 'div', style: { width: '40px', height: '40px', 'border-radius': '50%', 'background-color': '#eee' } },
+            { tagName: 'div', content: 'Alexander Hunt', style: { 'font-weight': '700', 'font-size': '14px' } }
+          ]
+        }
       ]
     }
   });

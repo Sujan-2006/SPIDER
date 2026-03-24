@@ -1,5 +1,3 @@
-/* GrapesJS UI Overrides for "Sophisticated Minimalist" Aesthetic - THE LOOM EXPERIMENTAL */
-
 /* Force all GrapesJS editor wrappers to be transparent to show our React background */
 .gjs-editor-cont,
 .gjs-editor,
@@ -11,7 +9,21 @@
   font-family: 'Inter', system-ui, sans-serif !important;
 }
 
-/* Ensure the canvas doesn't have its own background */
+/* Hide editor chrome in Preview Mode */
+.is-preview .gjs-cv-canvas__frames,
+.is-preview .gjs-cv-canvas__overlays,
+.is-preview .gjs-toolbar,
+.is-preview .gjs-badge,
+.is-preview .gjs-highlighter {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.is-preview .gjs-frame-wrapper {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
 .gjs-cv-canvas {
   background-color: transparent !important;
   top: 0 !important;
@@ -20,13 +32,37 @@
   height: 100% !important;
 }
 
+/* Custom Scrollbars for Panes */
+#blocks-container::-webkit-scrollbar,
+#layers-container::-webkit-scrollbar,
+#styles-container::-webkit-scrollbar,
+#assets-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+#blocks-container::-webkit-scrollbar-track,
+#layers-container::-webkit-scrollbar-track,
+#styles-container::-webkit-scrollbar-track,
+#assets-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#blocks-container::-webkit-scrollbar-thumb,
+#layers-container::-webkit-scrollbar-thumb,
+#styles-container::-webkit-scrollbar-thumb,
+#assets-container::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 10px;
+}
+
 /* The actual iframe/frame gets white and centered */
 .gjs-frame-wrapper {
   background: #ffffff !important;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3) !important;
   border-radius: 4px !important;
   overflow: hidden !important;
   margin: 0 auto !important;
+  transition: all 0.3s ease !important;
 }
 
 /* Asset Manager Styling (The Library) */
@@ -266,17 +302,31 @@
 
 .gjs-toolbar {
   background-color: #111 !important;
-  border-radius: 8px !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
-  padding: 4px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+  padding: 6px !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
 }
 .gjs-toolbar-item {
   color: #fff !important;
-  transition: background-color 0.2s !important;
-  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  border-radius: 6px !important;
 }
 .gjs-toolbar-item:hover {
   background-color: #9D50BB !important;
+  color: #fff !important;
+}
+
+/* High-end Hover/Selection */
+.gjs-hovered {
+  outline: 2px solid #9D50BB !important;
+  outline-offset: -2px !important;
+}
+
+.gjs-selected {
+  outline: 3px solid #9D50BB !important;
+  outline-offset: -2px !important;
+  box-shadow: 0 0 0 1000px rgba(157, 80, 187, 0.03) inset !important;
 }
 
 /* States Select */

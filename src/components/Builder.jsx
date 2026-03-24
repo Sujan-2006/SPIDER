@@ -15,6 +15,13 @@ import { registerComponentTypes } from '../grapes/componentTypes';
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
 
+// GrapesJS Plugins
+import gjsBlocksBasic from 'grapesjs-blocks-basic';
+import gjsForms from 'grapesjs-plugin-forms';
+import gjsCountdown from 'grapesjs-component-countdown';
+import gjsTabs from 'grapesjs-tabs';
+import gjsTooltip from 'grapesjs-tooltip';
+
 // Custom Components
 import LeftSidebar from './LeftSidebar';
 import RightSidebar from './RightSidebar';
@@ -62,11 +69,21 @@ const Builder = ({ projectId, templateId }) => {
         }
         .gjs-hovered { outline: 2px solid #9D50BB !important; outline-offset: -2px; }
         .gjs-selected { outline: 3px solid #9D50BB !important; outline-offset: -2px; }
+        * { box-sizing: border-box; }
       `,
+      plugins: [gjsBlocksBasic, gjsForms, gjsCountdown, gjsTabs, gjsTooltip],
+      pluginsOpts: {
+        [gjsBlocksBasic]: { flexGrid: true },
+        [gjsForms]: {},
+        [gjsCountdown]: {},
+        [gjsTabs]: {},
+        [gjsTooltip]: {},
+      },
       canvas: {
         dragMode: 'translate',
         allowSelfDrop: true,
       },
+      traitManager: { appendTo: '#traits-container' },
       deviceManager: {
         devices: [
           { name: 'Desktop', width: '' }, // Let it be fluid within the React-controlled wrapper
@@ -300,7 +317,7 @@ const Builder = ({ projectId, templateId }) => {
           </button>
           <button 
             onClick={() => handleDeviceChange('Mobile')}
-            className={`p-1.5 rounded transition-colors ${activeDevice === 'Mobile' ? 'bg-white shadow-sm text-primary' : 'text-gray-400 hover:text-gray-700'}`}
+            className={`p-1.5 rounded-md transition-all ${activeDevice === 'Mobile' ? 'bg-white shadow-sm text-primary ring-1 ring-black/5' : 'text-gray-400 hover:text-gray-700 hover:bg-white/50'}`}
             title="Mobile"
           >
             <Smartphone size={16} />
@@ -359,7 +376,7 @@ const Builder = ({ projectId, templateId }) => {
           {/* GrapesJS fills this inner div — React handles the width and centering */}
           <div
             ref={editorRef}
-            className={`transition-all duration-300 ease-in-out relative z-0 mx-auto ${isPreview ? 'w-full h-full' : 'bg-white shadow-[0_30px_60px_-12px_rgba(50,50,93,0.25),_0_18px_36px_-18px_rgba(0,0,0,0.3)] rounded-xl'}`}
+            className={`transition-all duration-300 ease-in-out relative z-0 mx-auto ${isPreview ? 'w-full h-full is-preview' : 'bg-white shadow-[0_30px_60px_-12px_rgba(50,50,93,0.25),_0_18px_36px_-18px_rgba(0,0,0,0.3)] rounded-xl'}`}
             style={{ 
               width: '100%',
               minHeight: isPreview ? '100vh' : '120vh'
