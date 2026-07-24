@@ -10,6 +10,11 @@ export default defineConfig({
         target: 'https://api.netlify.com/api/v1',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/netlify/, '')
+      },
+      '/api/nvidia': {
+        target: 'https://integrate.api.nvidia.com/v1',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/nvidia/, '')
       }
     }
   }

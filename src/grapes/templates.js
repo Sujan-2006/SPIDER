@@ -1,8 +1,25 @@
-// ── Template definitions for the visual builder ──────────────────────────────
-// Each template provides ready-made HTML and CSS that gets loaded into the
-// GrapesJS canvas via editor.setComponents() / editor.setStyle().
+import { ecommerce } from './templates/ecommerce';
+import { agency } from './templates/agency';
+import { restaurant } from './templates/restaurant';
+import { event } from './templates/event';
+import { blog } from './templates/blog';
+import { saasDark } from './templates/saasDark';
+import { realEstate } from './templates/realEstate';
+import { crypto } from './templates/crypto';
+import { gym } from './templates/gym';
+import { mobileApp } from './templates/mobileApp';
 
 export const TEMPLATES = {
+  ecommerce,
+  agency,
+  restaurant,
+  event,
+  blog,
+  saasDark,
+  realEstate,
+  crypto,
+  gym,
+  mobileApp,
   portfolio: {
     name: 'Portfolio',
     html: `<div id="portfolio-root">

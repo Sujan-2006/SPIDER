@@ -126,7 +126,7 @@ function TemplatePreviewModal({ template, onConfirm, onClose }) {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+          className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
           aria-label="Close preview"
         >
           <X className="w-4 h-4 text-gray-600" />
@@ -215,7 +215,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white font-sans overflow-auto">
 
       {/* ── NAV ── */}
-      <nav className="flex items-center justify-between px-8 py-5 max-w-7xl mx-auto border-b border-gray-100">
+      <nav className="flex items-center justify-between px-4 sm:px-8 py-4 sm:py-5 max-w-7xl mx-auto border-b border-gray-100">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-violet-600" />
           <span className="font-bold text-xl tracking-tight text-gray-900">SPIDER</span>
@@ -223,13 +223,13 @@ export default function LandingPage() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => navigate('/login')}
-            className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-4 py-2"
+            className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors px-3 py-1.5 sm:px-4 sm:py-2"
           >
             Log in
           </button>
           <button
             onClick={() => navigate('/signup')}
-            className="text-sm font-semibold px-5 py-2.5 rounded-full bg-gray-900 text-white hover:bg-indigo-600 transition-all shadow-md"
+            className="text-sm font-semibold px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full bg-gray-900 text-white hover:bg-indigo-600 transition-all shadow-md"
           >
             Start for free
           </button>
@@ -237,10 +237,10 @@ export default function LandingPage() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-28 pb-24 overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-16 sm:pt-28 pb-12 sm:pb-24 overflow-hidden">
         {/* Gradient blob */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-br from-indigo-100 via-violet-100 to-pink-100 rounded-full blur-3xl opacity-60" />
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[900px] max-w-full h-[500px] bg-gradient-to-br from-indigo-100 via-violet-100 to-pink-100 rounded-full blur-3xl opacity-60" />
         </div>
 
         {/* Badge */}
@@ -249,7 +249,7 @@ export default function LandingPage() {
           No-Code Website Builder
         </div>
 
-        <h1 className="text-5xl sm:text-7xl font-extrabold text-gray-900 tracking-tight leading-[1.1] max-w-4xl">
+        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-gray-900 tracking-tight leading-[1.1] max-w-4xl">
           Build websites visually{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-violet-600">
             with drag-and-drop
@@ -264,13 +264,13 @@ export default function LandingPage() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={() => navigate('/dashboard')}
-            className="flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-semibold text-lg shadow-xl shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-0.5 transform transition-all"
+            className="flex items-center w-full sm:w-auto justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-semibold text-lg shadow-xl shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-0.5 transform transition-all"
           >
             Start Building <ArrowRight className="w-5 h-5" />
           </button>
           <button
             onClick={() => navigate('/dashboard')}
-            className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-gray-200 text-gray-700 font-semibold text-lg hover:border-indigo-300 hover:text-indigo-700 hover:bg-indigo-50 transition-all"
+            className="flex items-center w-full sm:w-auto justify-center gap-2 px-8 py-4 rounded-full border-2 border-gray-200 text-gray-700 font-semibold text-lg hover:border-indigo-300 hover:text-indigo-700 hover:bg-indigo-50 transition-all"
           >
             Choose Template
           </button>
@@ -309,10 +309,10 @@ export default function LandingPage() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className="bg-gray-50 border-t border-gray-100 py-24">
+      <section className="bg-gray-50 border-t border-gray-100 py-12 sm:py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight">Everything you need to build fast</h2>
+          <div className="text-center mb-8 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">Everything you need to build fast</h2>
             <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">A complete toolkit for non-technical creators and professionals alike.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -330,13 +330,13 @@ export default function LandingPage() {
       </section>
 
       {/* ── TEMPLATES ── */}
-      <section id="templates" className="py-24 bg-gray-900">
+      <section id="templates" className="py-12 sm:py-24 bg-gray-900">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8 sm:mb-14">
             <span className="inline-block px-3 py-1 rounded-full bg-indigo-900/60 text-indigo-300 text-xs font-semibold uppercase tracking-widest mb-4">
               Ready-made Templates
             </span>
-            <h2 className="text-4xl font-extrabold text-white tracking-tight">Start from a template</h2>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">Start from a template</h2>
             <p className="mt-4 text-gray-400 text-lg max-w-xl mx-auto">
               Pick one, customise it in the visual builder, and publish — in minutes.
             </p>
@@ -399,14 +399,14 @@ export default function LandingPage() {
       )}
 
       {/* ── CTA ── */}
-      <section className="py-24 bg-gradient-to-br from-indigo-600 to-violet-700 text-white text-center px-6">
+      <section className="py-12 sm:py-24 bg-gradient-to-br from-indigo-600 to-violet-700 text-white text-center px-6">
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">Ready to build your website?</h2>
-        <p className="text-indigo-200 text-lg mb-10 max-w-lg mx-auto">
+        <p className="text-indigo-200 text-lg mb-6 sm:mb-10 max-w-lg mx-auto">
           Join thousands of creators building beautiful websites without a single line of code.
         </p>
         <button
           onClick={() => navigate('/dashboard')}
-          className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white text-indigo-700 font-bold text-lg hover:bg-indigo-50 transition-all shadow-xl"
+          className="inline-flex items-center w-full sm:w-auto justify-center gap-2 px-6 sm:px-10 py-3.5 sm:py-4 rounded-full bg-white text-indigo-700 font-bold text-base sm:text-lg hover:bg-indigo-50 transition-all shadow-xl"
         >
           Start Building Free <ArrowRight className="w-5 h-5" />
         </button>

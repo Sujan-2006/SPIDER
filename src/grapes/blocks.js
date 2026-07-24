@@ -184,6 +184,124 @@ export const loadBlocks = (editor) => {
     }
   });
 
+  /* === CATEGORY: E-COMMERCE & SAAS === */
+  const svgPricing = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>`;
+  
+  bm.add('pricing-table', {
+    label: 'Pricing 3-Tier',
+    category: 'E-Commerce & SaaS',
+    media: svgPricing,
+    content: {
+      tagName: 'section',
+      style: { padding: '80px 20px', 'background-color': '#f8f9fa' },
+      components: [
+        { tagName: 'h2', content: 'Simple, transparent pricing', style: { 'text-align': 'center', 'font-family': '"Playfair Display", serif', 'font-size': '2.5rem', 'margin-bottom': '10px' } },
+        { tagName: 'p', content: 'No hidden fees. No surprise charges.', style: { 'text-align': 'center', color: '#666', 'margin-bottom': '50px' } },
+        {
+          tagName: 'div',
+          style: { display: 'grid', 'grid-template-columns': 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', 'max-width': '1000px', margin: '0 auto' },
+          components: [
+            {
+              tagName: 'div',
+              style: { padding: '40px', background: '#fff', 'border-radius': '16px', border: '1px solid #eee', 'text-align': 'center' },
+              components: [
+                { tagName: 'h4', content: 'Starter', style: { color: '#666', 'text-transform': 'uppercase', 'letter-spacing': '1px', 'font-size': '12px', 'margin-bottom': '15px' } },
+                { tagName: 'div', content: '$0', style: { 'font-size': '3rem', 'font-weight': '700', 'margin-bottom': '20px' } },
+                { tagName: 'p', content: 'Perfect for small side projects.', style: { color: '#666', 'font-size': '14px', 'margin-bottom': '30px' } },
+                { tagName: 'button', content: 'Get Started', style: { width: '100%', padding: '12px', background: '#f0f0f0', color: '#333', border: 'none', 'border-radius': '8px', 'font-weight': '600' } }
+              ]
+            },
+            {
+              tagName: 'div',
+              style: { padding: '40px', background: '#fff', 'border-radius': '16px', border: '2px solid #9D50BB', 'text-align': 'center', 'box-shadow': '0 20px 40px rgba(157, 80, 187, 0.1)', transform: 'translateY(-10px)' },
+              components: [
+                { tagName: 'div', content: 'Most Popular', style: { background: '#9D50BB', color: '#fff', 'font-size': '10px', 'text-transform': 'uppercase', 'letter-spacing': '1px', padding: '4px 12px', 'border-radius': '20px', display: 'inline-block', 'margin-bottom': '15px' } },
+                { tagName: 'h4', content: 'Pro', style: { color: '#9D50BB', 'text-transform': 'uppercase', 'letter-spacing': '1px', 'font-size': '12px', 'margin-bottom': '15px' } },
+                { tagName: 'div', content: '$29', style: { 'font-size': '3rem', 'font-weight': '700', 'margin-bottom': '20px' } },
+                { tagName: 'p', content: 'For professional creators.', style: { color: '#666', 'font-size': '14px', 'margin-bottom': '30px' } },
+                { tagName: 'button', content: 'Upgrade to Pro', style: { width: '100%', padding: '12px', background: '#9D50BB', color: '#fff', border: 'none', 'border-radius': '8px', 'font-weight': '600' } }
+              ]
+            },
+            {
+              tagName: 'div',
+              style: { padding: '40px', background: '#fff', 'border-radius': '16px', border: '1px solid #eee', 'text-align': 'center' },
+              components: [
+                { tagName: 'h4', content: 'Enterprise', style: { color: '#666', 'text-transform': 'uppercase', 'letter-spacing': '1px', 'font-size': '12px', 'margin-bottom': '15px' } },
+                { tagName: 'div', content: '$99', style: { 'font-size': '3rem', 'font-weight': '700', 'margin-bottom': '20px' } },
+                { tagName: 'p', content: 'For large-scale teams.', style: { color: '#666', 'font-size': '14px', 'margin-bottom': '30px' } },
+                { tagName: 'button', content: 'Contact Sales', style: { width: '100%', padding: '12px', background: '#f0f0f0', color: '#333', border: 'none', 'border-radius': '8px', 'font-weight': '600' } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  });
+
+  /* === CATEGORY: SOCIAL & TRUST === */
+  bm.add('trusted-by', {
+    label: 'Logo Cloud',
+    category: 'Social & Trust',
+    media: svgLayout,
+    content: {
+      tagName: 'section',
+      style: { padding: '60px 20px', 'background-color': '#ffffff', 'text-align': 'center' },
+      components: [
+        { tagName: 'p', content: 'TRUSTED BY INNOVATIVE TEAMS WORLDWIDE', style: { 'font-size': '12px', 'letter-spacing': '2px', color: '#999', 'margin-bottom': '30px' } },
+        {
+          tagName: 'div',
+          style: { display: 'flex', 'flex-wrap': 'wrap', 'justify-content': 'center', gap: '40px', opacity: '0.6', filter: 'grayscale(100%)' },
+          components: [
+            { tagName: 'h3', content: 'Acme Corp', style: { 'font-family': '"Playfair Display", serif', 'font-size': '1.5rem', margin: '0' } },
+            { tagName: 'h3', content: 'GlobalNet', style: { 'font-family': '"Playfair Display", serif', 'font-size': '1.5rem', margin: '0' } },
+            { tagName: 'h3', content: 'Quantum', style: { 'font-family': '"Playfair Display", serif', 'font-size': '1.5rem', margin: '0' } },
+            { tagName: 'h3', content: 'Nexus', style: { 'font-family': '"Playfair Display", serif', 'font-size': '1.5rem', margin: '0' } }
+          ]
+        }
+      ]
+    }
+  });
+
+  bm.add('stats-counter', {
+    label: 'Stats Row',
+    category: 'Social & Trust',
+    media: svgCols,
+    content: {
+      tagName: 'section',
+      style: { padding: '80px 20px', 'background-color': '#111', color: '#fff' },
+      components: [
+        {
+          tagName: 'div',
+          style: { display: 'flex', 'flex-wrap': 'wrap', 'justify-content': 'space-around', 'max-width': '1000px', margin: '0 auto', gap: '30px', 'text-align': 'center' },
+          components: [
+            {
+              tagName: 'div',
+              components: [
+                { tagName: 'div', content: '1M+', style: { 'font-size': '3.5rem', 'font-weight': '700', 'margin-bottom': '10px' } },
+                { tagName: 'div', content: 'Active Users', style: { color: '#888', 'text-transform': 'uppercase', 'letter-spacing': '1px', 'font-size': '12px' } }
+              ]
+            },
+            {
+              tagName: 'div',
+              components: [
+                { tagName: 'div', content: '$50M', style: { 'font-size': '3.5rem', 'font-weight': '700', 'margin-bottom': '10px' } },
+                { tagName: 'div', content: 'Revenue Generated', style: { color: '#888', 'text-transform': 'uppercase', 'letter-spacing': '1px', 'font-size': '12px' } }
+              ]
+            },
+            {
+              tagName: 'div',
+              components: [
+                { tagName: 'div', content: '99.9%', style: { 'font-size': '3.5rem', 'font-weight': '700', 'margin-bottom': '10px' } },
+                { tagName: 'div', content: 'Uptime SLA', style: { color: '#888', 'text-transform': 'uppercase', 'letter-spacing': '1px', 'font-size': '12px' } }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  });
+
+
   // ── RESPONSIVE GRID (3 → 2 → 1 column auto breakpoints) ─────────────────────
   const svgGrid = `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11-11h7v7h-7V3zm0 11h7v7h-7v-7z"/></svg>`;
 
@@ -482,6 +600,60 @@ export const loadBlocks = (editor) => {
             { tagName: 'div', style: { width: '40px', height: '40px', 'border-radius': '50%', 'background-color': '#eee' } },
             { tagName: 'div', content: 'Alexander Hunt', style: { 'font-weight': '700', 'font-size': '14px' } }
           ]
+        }
+      ]
+    }
+  });
+
+  bm.add('footer-macro', {
+    label: 'Footer & Newsletter',
+    category: 'Macro Sections',
+    media: svgLayout,
+    content: {
+      tagName: 'footer',
+      style: { 'background-color': '#f8f9fa', padding: '80px 20px 40px', 'border-top': '1px solid #eaeaea' },
+      components: [
+        {
+          tagName: 'div',
+          style: { display: 'grid', 'grid-template-columns': 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px', 'max-width': '1200px', margin: '0 auto', 'margin-bottom': '60px' },
+          components: [
+            {
+              tagName: 'div',
+              components: [
+                { tagName: 'h3', content: 'SPIDER', style: { 'font-family': '"Playfair Display", serif', 'font-size': '1.5rem', 'margin-bottom': '20px', color: '#111' } },
+                { tagName: 'p', content: 'The next generation visual builder for modern teams.', style: { color: '#666', 'font-size': '14px', 'line-height': '1.6' } }
+              ]
+            },
+            {
+              tagName: 'div',
+              components: [
+                { tagName: 'h4', content: 'Product', style: { 'font-weight': '600', 'margin-bottom': '20px', color: '#111' } },
+                { tagName: 'a', content: 'Features', style: { display: 'block', color: '#666', 'text-decoration': 'none', 'margin-bottom': '10px', 'font-size': '14px' }, attributes: { href: '#' } },
+                { tagName: 'a', content: 'Pricing', style: { display: 'block', color: '#666', 'text-decoration': 'none', 'margin-bottom': '10px', 'font-size': '14px' }, attributes: { href: '#' } },
+                { tagName: 'a', content: 'Changelog', style: { display: 'block', color: '#666', 'text-decoration': 'none', 'margin-bottom': '10px', 'font-size': '14px' }, attributes: { href: '#' } }
+              ]
+            },
+            {
+              tagName: 'div',
+              components: [
+                { tagName: 'h4', content: 'Stay Updated', style: { 'font-weight': '600', 'margin-bottom': '20px', color: '#111' } },
+                { tagName: 'p', content: 'Join our newsletter for the latest updates.', style: { color: '#666', 'font-size': '14px', 'margin-bottom': '15px' } },
+                {
+                  tagName: 'form',
+                  style: { display: 'flex', gap: '10px' },
+                  components: [
+                    { tagName: 'input', attributes: { type: 'email', placeholder: 'Email address' }, style: { flex: '1', padding: '10px', border: '1px solid #ddd', 'border-radius': '6px', 'font-size': '14px' } },
+                    { tagName: 'button', content: 'Subscribe', style: { padding: '10px 15px', background: '#111', color: '#fff', border: 'none', 'border-radius': '6px', cursor: 'pointer', 'font-size': '14px' } }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          tagName: 'div',
+          style: { 'text-align': 'center', 'border-top': '1px solid #eaeaea', 'padding-top': '40px', color: '#999', 'font-size': '14px' },
+          components: [{ type: 'text', content: '© 2026 Spider Platform. All rights reserved.' }]
         }
       ]
     }

@@ -6,13 +6,13 @@ export default function NavigationBar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Hide on landing page AND builder (builder has its own header)
-  if (['/', '/landing', '/builder'].includes(location.pathname)) {
+  // Hide on landing page, dashboard, AND builder (builder has its own header)
+  if (['/', '/landing', '/dashboard', '/builder'].includes(location.pathname)) {
     return null;
   }
 
   // Common handler to go to dashboard
-  const goDashboard = () => navigate('/dashboard');
+  const goDashboard = () => navigate('/');
 
   return (
     <div className="w-full shrink-0 bg-white border-b border-gray-200 px-4 py-2 flex items-center gap-2 z-50">
